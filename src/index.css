@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 100% 97%;
+    --foreground: 210 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 60% 15%;
+
+    --primary: 200 85% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 75% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 30% 45%;
+
+    --accent: 185 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 85%;
+    --input: 210 40% 85%;
+    --ring: 200 85% 25%;
+
+    --radius: 0.75rem;
+
+    /* Water is Life custom colors */
+    --ocean-deep: 200 85% 25%;
+    --ocean-medium: 195 75% 35%;
+    --water-light: 190 75% 45%;
+    --aqua-bright: 185 80% 50%;
+    --sky-light: 200 80% 85%;
+    
+    /* Gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(200 85% 25%), hsl(195 75% 35%));
+    --gradient-water: linear-gradient(180deg, hsl(190 75% 45%), hsl(185 80% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 85% 25%) 0%, hsl(195 75% 35%) 50%, hsl(190 75% 45%) 100%);
+    
+    /* Shadows */
+    --shadow-water: 0 10px 40px -10px hsl(190 75% 45% / 0.3);
+    --shadow-deep: 0 20px 60px -15px hsl(200 85% 25% / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 60% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 200 50% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 200 50% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 185 80% 50%;
+    --primary-foreground: 200 60% 8%;
+
+    --secondary: 200 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 200 40% 20%;
+    --muted-foreground: 210 30% 65%;
+
+    --accent: 190 75% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 40% 20%;
+    --input: 200 40% 20%;
+    --ring: 185 80% 50%;
+    
+    --sidebar-background: 200 60% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 185 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 40% 20%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 200 40% 20%;
+    --sidebar-ring: 185 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

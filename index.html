@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water is Life - Donando Agua Limpia para Familias en Chile</title>
+    <meta name="description" content="Water is Life dona filtros de agua ultra a comunidades en Chile sin acceso a agua potable. Cada donación conecta familias y transforma vidas." />
+    <meta name="author" content="Water is Life" />
+
+    <meta property="og:title" content="Water is Life - Agua Limpia para Todos" />
+    <meta property="og:description" content="Únete a nuestra misión de llevar agua potable a comunidades vulnerables en Chile. Dona un filtro de agua y cambia una vida." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
+
+  <body>
+    <noscript>
+      Esta aplicación requiere JavaScript. Inicia el servidor con
+      <code>npm run dev</code> y abre la URL indicada en la consola.
+    </noscript>
+    <div id="root"></div>
+    <script>
+      if (location.protocol === 'file:') {
+        const tip = document.createElement('div');
+        tip.style.cssText = 'position:fixed;inset:0;background:#0b0e1a;color:#e6edf3;display:flex;align-items:center;justify-content:center;z-index:9999;font:16px system-ui;padding:24px;text-align:center';
+        tip.innerHTML = 'Para ver esta app, abre un servidor de desarrollo: <b>npm i</b> y luego <b>npm run dev</b>. No abras index.html directamente.';
+        document.body.appendChild(tip);
+      }
+    </script>
+    <script>
+      // Aviso si no hay servidor de Vite (p.ej. Live Server 5500)
+      (async () => {
+        // Solo aplica a la version de desarrollo (cuando el HTML carga /src/main.tsx)
+        const usesSrcMain = !!document.querySelector('script[type="module"][src*="/src/main"]');
+        if (!usesSrcMain) return;
+        try {
+          const res = await fetch('/@vite/client', { method: 'HEAD' });
+          if (!res.ok) throw new Error('no-vite');
+        } catch {
+          const tip = document.createElement('div');
+          tip.style.cssText = 'position:fixed;inset:0;background:#0b0e1a;color:#e6edf3;display:flex;align-items:center;justify-content:center;z-index:9999;font:16px system-ui;padding:24px;text-align:center';
+          tip.innerHTML = 'Esta app usa Vite y no puede ejecutarse con servidores estaticos (como Live Server 5500). Ejecuta <b>npm run dev</b> y abre la URL que te indique (normalmente <i>http://127.0.0.1:5173</i>).';
+          document.body.appendChild(tip);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
