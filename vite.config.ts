@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => ({
     host: "127.0.0.1",
     port: 5173,
   },
+  // IMPORTANT: set base for GitHub Pages project site
+  // Must match the repository name used at https://<user>.github.io/<repo>/
+  base: "/WRTERESAFGUA/",
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
