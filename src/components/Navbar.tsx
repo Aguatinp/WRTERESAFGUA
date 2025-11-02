@@ -31,19 +31,19 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
             <button onClick={() => scrollToSection("about")} className="text-foreground hover:text-primary transition-colors">
-              Sobre el Proyecto
+              About the Project
             </button>
             <button onClick={() => scrollToSection("why")} className="text-foreground hover:text-primary transition-colors">
-              Por Qué Importa
+              Why It Matters
             </button>
             <button onClick={() => scrollToSection("how")} className="text-foreground hover:text-primary transition-colors">
-              Cómo Donar
+              How to Give
             </button>
             <button onClick={() => scrollToSection("map")} className="text-foreground hover:text-primary transition-colors">
-              Mapa de Impacto
+              Impact Map
             </button>
             <Button onClick={() => scrollToSection("donate")} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity shadow-lg">
-              DONAR
+              DONATE
             </Button>
           </div>
 
@@ -57,19 +57,19 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 flex flex-col gap-4 animate-in slide-in-from-top">
             <button onClick={() => scrollToSection("about")} className="text-foreground hover:text-primary transition-colors text-left">
-              Sobre el Proyecto
+              About the Project
             </button>
             <button onClick={() => scrollToSection("why")} className="text-foreground hover:text-primary transition-colors text-left">
-              Por Qué Importa
+              Why It Matters
             </button>
             <button onClick={() => scrollToSection("how")} className="text-foreground hover:text-primary transition-colors text-left">
-              Cómo Donar
+              How to Give
             </button>
             <button onClick={() => scrollToSection("map")} className="text-foreground hover:text-primary transition-colors text-left">
-              Mapa de Impacto
+              Impact Map
             </button>
             <Button onClick={() => scrollToSection("donate")} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
-              DONAR
+              DONATE
             </Button>
           </div>
         )}

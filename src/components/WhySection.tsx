@@ -6,10 +6,10 @@ const WhySection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            ¿Por Qué es Importante?
+            Why Does This Matter?
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Proporciona una solución real a una necesidad urgente: el acceso a agua potable. En muchas partes de Chile, hay comunidades que no pueden acceder a agua limpia para beber o cocinar.
+            It offers a real solution to an urgent need: access to safe drinking water. Across Chile, many communities still cannot obtain clean water for drinking or cooking.
           </p>
         </div>
 
@@ -20,7 +20,7 @@ const WhySection = () => {
             </div>
             <div className="text-5xl font-bold mb-4 text-foreground">29%</div>
             <p className="text-muted-foreground">
-              Solo el 29% de la población de bajos ingresos tiene acceso a agua gestionada de forma segura
+              Only 29% of low-income households have safely managed water access
             </p>
           </div>
 
@@ -30,7 +30,7 @@ const WhySection = () => {
             </div>
             <div className="text-5xl font-bold mb-4 text-foreground">829K</div>
             <p className="text-muted-foreground">
-              Muertes anuales por diarrea causada por agua contaminada
+              Annual deaths from diarrhea caused by contaminated water
             </p>
           </div>
 
@@ -40,7 +40,7 @@ const WhySection = () => {
             </div>
             <div className="text-5xl font-bold mb-4 text-foreground">1/4</div>
             <p className="text-muted-foreground">
-              Una de cada cuatro escuelas primarias carece de servicio de agua
+              One in four primary schools lacks water service
             </p>
           </div>
         </div>
@@ -48,30 +48,30 @@ const WhySection = () => {
         <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 border border-primary/20">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-3xl font-bold mb-6 text-foreground">El Impacto Real</h3>
+              <h3 className="text-3xl font-bold mb-6 text-foreground">Tangible Impact</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                   <p className="text-muted-foreground">
-                    Cuando se mejora el acceso al agua, disminuye el tiempo dedicado a recolectarla
+                    When access to water improves, the time spent collecting it drops
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0" />
                   <p className="text-muted-foreground">
-                    Aumenta la productividad de la comunidad
+                    Community productivity rises
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
                   <p className="text-muted-foreground">
-                    Mejora significativamente la salud de las familias
+                    Family health improves significantly
                   </p>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                   <p className="text-muted-foreground">
-                    Los niños pueden asistir a la escuela con regularidad
+                    Children can attend school consistently
                   </p>
                 </li>
               </ul>
@@ -79,7 +79,7 @@ const WhySection = () => {
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop"
-                alt="Niños con acceso a agua limpia"
+                alt="Children with access to clean water"
                 className="rounded-xl shadow-xl w-full object-cover aspect-square"
               />
               <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-30 -z-10" />

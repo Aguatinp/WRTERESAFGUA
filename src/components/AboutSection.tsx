@@ -6,10 +6,10 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            ¿Qué es Nuestro Proyecto?
+            What Is Our Project?
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Nuestro proyecto nace de la iniciativa de Water is Life, una organización que busca llevar agua limpia a comunidades necesitadas. Nos enfocamos en el producto Bucket Ultra Filter.
+            Our project stems from the Water is Life initiative, an organization dedicated to bringing clean water to communities in need. We focus on the Bucket Ultra Filter solution.
           </p>
         </div>
 
@@ -20,9 +20,9 @@ const AboutSection = () => {
                 <Droplets className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-2 text-foreground">El Filtro Ultra</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-foreground">The Ultra Filter</h3>
                 <p className="text-muted-foreground">
-                  El Bucket Ultra Filter proporciona agua bacteriológicamente segura para 3-5 años de uso diario utilizando tecnología de ultrafiltración con nanotubos.
+                  The Bucket Ultra Filter delivers bacteriologically safe water for 3-5 years of daily use by leveraging nanotube ultrafiltration technology.
                 </p>
               </div>
             </div>
@@ -32,9 +32,9 @@ const AboutSection = () => {
                 <Users className="w-6 h-6 text-secondary" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-2 text-foreground">Conexión Familiar</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-foreground">Family Connection</h3>
                 <p className="text-muted-foreground">
-                  Nuestra propuesta es que cada clase done un filtro. Las familias también pueden donar directamente y conectar con la familia que lo recibe.
+                  We invite every class to donate a filter. Families can also contribute directly and connect with the household that receives their support.
                 </p>
               </div>
             </div>
@@ -44,9 +44,9 @@ const AboutSection = () => {
                 <Target className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-2 text-foreground">Nuestra Misión</h3>
+                <h3 className="text-2xl font-semibold mb-2 text-foreground">Our Mission</h3>
                 <p className="text-muted-foreground">
-                  Water is Life es una organización sin fines de lucro con más de 15 años de experiencia. Su misión es llevar agua potable, saneamiento e higiene a comunidades vulnerables.
+                  Water is Life is a nonprofit with more than 15 years of experience. Its mission is to bring safe drinking water, sanitation, and hygiene to vulnerable communities.
                 </p>
               </div>
             </div>
@@ -56,7 +56,7 @@ const AboutSection = () => {
             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20">
               <img
                 src="https://images.unsplash.com/photo-1581093458791-9d42e55b3c3f?w=800&h=600&fit=crop"
-                alt="Agua limpia para comunidades"
+                alt="Clean water for communities"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -67,20 +67,20 @@ const AboutSection = () => {
         {/* Key Stats */}
         <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">¿Quiénes son Water is Life?</h3>
+            <h3 className="text-3xl font-bold mb-4">Who Is Water is Life?</h3>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Una organización sin fines de lucro comprometida con llevar agua segura a comunidades vulnerables en África y América Latina.
+              A nonprofit organization committed to delivering safe water to vulnerable communities across Africa and Latin America.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <div className="text-5xl font-bold mb-2">15+</div>
-              <div className="text-white/90">Años de experiencia llevando agua limpia</div>
+              <div className="text-white/90">Years providing clean water solutions</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
               <div className="text-5xl font-bold mb-2">1M</div>
-              <div className="text-white/90">Meta: personas con acceso a agua segura para 2030</div>
+              <div className="text-white/90">Goal: people with safe water access by 2030</div>
             </div>
           </div>
         </div>

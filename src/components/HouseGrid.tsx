@@ -13,7 +13,7 @@ const HouseGrid = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center p-12">
-        <div className="animate-pulse text-muted-foreground">Cargando casas...</div>
+        <div className="animate-pulse text-muted-foreground">Loading homes...</div>
       </div>
     );
   }
@@ -23,10 +23,10 @@ const HouseGrid = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Nuestras Casas con Agua Limpia
+            Homes with Clean Water
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Cada casa representa una familia que ahora tiene acceso a agua limpia gracias a la generosidad de nuestros cursos donantes
+            Each home represents a family that now has access to clean water thanks to the generosity of our donor classes.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ const HouseGrid = () => {
                     <TooltipContent side="top" className="max-w-xs">
                       <div className="space-y-1">
                         <p className="font-bold text-primary">{house.courses.full_name}</p>
-                        <p className="text-xs text-muted-foreground">donó a</p>
+                        <p className="text-xs text-muted-foreground">donated to</p>
                         <p className="font-semibold text-secondary">{house.families.family_name}</p>
                         <p className="text-xs">{house.families.location}</p>
                       </div>
@@ -67,11 +67,11 @@ const HouseGrid = () => {
         <div className="flex items-center justify-center gap-8 text-sm">
           <div className="flex items-center gap-2">
             <Home className="w-6 h-6 text-primary" />
-            <span className="text-foreground font-medium">Casa Donada</span>
+            <span className="text-foreground font-medium">Home Donated</span>
           </div>
           <div className="flex items-center gap-2">
             <Home className="w-6 h-6 text-muted/30" />
-            <span className="text-muted-foreground">Pendiente</span>
+            <span className="text-muted-foreground">Pending</span>
           </div>
         </div>
       </div>

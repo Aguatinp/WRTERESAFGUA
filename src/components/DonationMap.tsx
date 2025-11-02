@@ -12,10 +12,10 @@ const DonationMap = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Mapa de Impacto
+            Impact Map
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Visualiza las conexiones entre familias donantes y beneficiadas a lo largo de Chile
+            Explore the connections between donor families and recipients throughout Chile.
           </p>
         </div>
 
@@ -25,19 +25,19 @@ const DonationMap = () => {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJoc2wodmFyKC0tcHJpbWFyeSkpIiBzdHJva2Utb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-20" />
             <div className="text-center z-10 bg-card/90 backdrop-blur-sm p-8 rounded-xl border border-border">
               <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4 text-foreground">Mapa Interactivo</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">Interactive Map</h3>
               <p className="text-muted-foreground mb-4 max-w-md">
-                Para activar el mapa interactivo con Mapbox, necesitas agregar tu token de Mapbox.
+                To enable the interactive Mapbox map, add your Mapbox token below.
               </p>
               <input
                 type="text"
-                placeholder="Ingresa tu token de Mapbox"
+                placeholder="Enter your Mapbox token"
                 value={mapboxToken}
                 onChange={(e) => setMapboxToken(e.target.value)}
                 className="px-4 py-2 rounded-lg border border-input bg-background text-foreground w-full max-w-md"
               />
               <p className="text-sm text-muted-foreground mt-2">
-                Obtén tu token en{" "}
+                Get your token at{" "}
                 <a href="https://mapbox.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                   mapbox.com
                 </a>
@@ -49,7 +49,7 @@ const DonationMap = () => {
         {/* Donations List */}
         {isLoading ? (
           <div className="text-center p-12">
-            <div className="animate-pulse text-muted-foreground">Cargando donaciones...</div>
+            <div className="animate-pulse text-muted-foreground">Loading donations...</div>
           </div>
         ) : donations && donations.length > 0 ? (
           <div className="grid md:grid-cols-2 gap-6">
@@ -71,20 +71,20 @@ const DonationMap = () => {
                     </div>
                     <div className="space-y-2">
                       <div>
-                        <span className="text-xs text-muted-foreground">Curso Donante:</span>
+                        <span className="text-xs text-muted-foreground">Donor Class:</span>
                         <p className="font-semibold text-foreground">
                           {donation.courses?.full_name || donation.donor_name}
                         </p>
                       </div>
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <div className="w-8 border-t border-dashed border-current" />
-                        <span className="text-xs">conecta con</span>
+                        <span className="text-xs">connects with</span>
                         <div className="w-8 border-t border-dashed border-current" />
                       </div>
                       <div>
-                        <span className="text-xs text-muted-foreground">Familia Beneficiada:</span>
+                        <span className="text-xs text-muted-foreground">Recipient Family:</span>
                         <p className="font-semibold text-secondary">
-                          {donation.families?.family_name || "Asignando familia..."}
+                          {donation.families?.family_name || "Assigning family..."}
                         </p>
                       </div>
                       {donation.message && (
@@ -101,15 +101,15 @@ const DonationMap = () => {
         ) : (
           <div className="text-center p-12 bg-card rounded-xl border border-border">
             <Users className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-            <p className="text-muted-foreground">Aún no hay donaciones completadas. ¡Sé el primero en donar!</p>
+            <p className="text-muted-foreground">No completed donations yet. Be the first to give!</p>
           </div>
         )}
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground">
-            Cada punto en el mapa representa una conexión real entre familias.
+            Every point on the map represents a real connection between families.
             <br />
-            <span className="font-semibold text-foreground">Juntos estamos cambiando vidas, un filtro a la vez.</span>
+            <span className="font-semibold text-foreground">Together we are changing lives, one filter at a time.</span>
           </p>
         </div>
       </div>

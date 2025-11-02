@@ -16,7 +16,7 @@ const CourseStatsTable = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center p-12">
-        <div className="animate-pulse text-muted-foreground">Cargando estadísticas...</div>
+        <div className="animate-pulse text-muted-foreground">Loading stats...</div>
       </div>
     );
   }
@@ -30,10 +30,10 @@ const CourseStatsTable = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Tabla de Posiciones por Curso
+            Course Leaderboard
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Reconocemos la generosidad y compromiso de cada curso con el proyecto
+            We celebrate each class for its generosity and commitment to this project.
           </p>
         </div>
 
@@ -43,9 +43,9 @@ const CourseStatsTable = () => {
             <div className="flex items-center justify-center gap-4 mb-4">
               <Trophy className="w-16 h-16" />
               <div className="text-center">
-                <p className="text-xl font-semibold opacity-90">Curso Líder</p>
+                <p className="text-xl font-semibold opacity-90">Top Course</p>
                 <p className="text-4xl font-bold">{topCourse.full_name}</p>
-                <p className="text-2xl opacity-90">{topCourse.houses_donated} casas donadas</p>
+                <p className="text-2xl opacity-90">{topCourse.houses_donated} homes funded</p>
               </div>
               <Trophy className="w-16 h-16" />
             </div>
@@ -58,10 +58,10 @@ const CourseStatsTable = () => {
             <TableHeader>
               <TableRow className="bg-muted/50">
                 <TableHead className="w-16">#</TableHead>
-                <TableHead>Curso</TableHead>
-                <TableHead className="text-center">Casas Donadas</TableHead>
-                <TableHead className="text-center">Monto Recaudado</TableHead>
-                <TableHead className="text-center">Progreso</TableHead>
+                <TableHead>Course</TableHead>
+                <TableHead className="text-center">Homes Donated</TableHead>
+                <TableHead className="text-center">Amount Raised</TableHead>
+                <TableHead className="text-center">Progress</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

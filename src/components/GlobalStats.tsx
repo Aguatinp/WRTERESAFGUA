@@ -15,10 +15,10 @@ const GlobalStats = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Impacto Global del Proyecto
+            Project Impact at a Glance
           </h2>
           <p className="text-xl text-white/90 leading-relaxed mb-12">
-            Juntos estamos cambiando vidas, una casa a la vez
+            Together we are changing lives, one household at a time.
           </p>
 
           {/* Main Stats Grid */}
@@ -29,12 +29,12 @@ const GlobalStats = () => {
                 <Home className="w-12 h-12" />
                 <div className="text-left">
                   <p className="text-5xl font-bold">{stats.totalHouses}</p>
-                  <p className="text-white/80 text-lg">Casas Donadas</p>
+                  <p className="text-white/80 text-lg">Homes Funded</p>
                 </div>
               </div>
               <Progress value={progressPercentage} className="h-3 bg-white/20" />
               <p className="mt-2 text-sm text-white/70">
-                Meta: {stats.goalHouses} casas ({progressPercentage.toFixed(1)}%)
+                Goal: {stats.goalHouses} homes ({progressPercentage.toFixed(1)}%)
               </p>
             </div>
 
@@ -46,12 +46,12 @@ const GlobalStats = () => {
                   <p className="text-5xl font-bold">
                     ${(stats.totalAmount / 1000000).toFixed(1)}M
                   </p>
-                  <p className="text-white/80 text-lg">Recaudado</p>
+                  <p className="text-white/80 text-lg">Raised</p>
                 </div>
               </div>
               <Progress value={amountProgressPercentage} className="h-3 bg-white/20" />
               <p className="mt-2 text-sm text-white/70">
-                Meta: ${(stats.totalGoal / 1000000).toFixed(1)}M ({amountProgressPercentage.toFixed(1)}%)
+                Goal: ${(stats.totalGoal / 1000000).toFixed(1)}M ({amountProgressPercentage.toFixed(1)}%)
               </p>
             </div>
           </div>
@@ -61,19 +61,19 @@ const GlobalStats = () => {
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <Droplet className="w-10 h-10 mx-auto mb-3" />
               <p className="text-3xl font-bold">{stats.totalHouses * 5}</p>
-              <p className="text-white/70">Familias con agua limpia por 3-5 años</p>
+              <p className="text-white/70">Families with clean water for 3-5 years</p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <TrendingUp className="w-10 h-10 mx-auto mb-3" />
               <p className="text-3xl font-bold">{stats.totalHouses * 20}+</p>
-              <p className="text-white/70">Personas beneficiadas</p>
+              <p className="text-white/70">People reached</p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <Home className="w-10 h-10 mx-auto mb-3" />
               <p className="text-3xl font-bold">{stats.goalHouses - stats.totalHouses}</p>
-              <p className="text-white/70">Casas por donar</p>
+              <p className="text-white/70">Homes still needed</p>
             </div>
           </div>
         </div>

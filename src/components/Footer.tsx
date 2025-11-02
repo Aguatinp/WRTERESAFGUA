@@ -12,35 +12,35 @@ const Footer = () => {
               <span className="text-2xl font-bold">Water is Life</span>
             </div>
             <p className="text-white/80 mb-4">
-              Llevando agua potable, saneamiento e higiene a comunidades vulnerables en Chile y América Latina desde hace más de 15 años.
+              Delivering safe water, sanitation, and hygiene to vulnerable communities in Chile and Latin America for more than 15 years.
             </p>
             <p className="text-white/60 text-sm">
-              Meta 2030: 1 millón de personas con acceso a agua segura
+              2030 Goal: 1 million people with reliable access to safe water
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-white/80">
               <li>
                 <button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white transition-colors">
-                  Sobre el Proyecto
+                  About the Project
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById("why")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white transition-colors">
-                  Por Qué Importa
+                  Why It Matters
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById("how")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white transition-colors">
-                  Cómo Donar
+                  How to Give
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById("map")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white transition-colors">
-                  Mapa de Impacto
+                  Impact Map
                 </button>
               </li>
             </ul>
@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+            <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-3 text-white/80">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
@@ -69,9 +69,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
-          <p>© 2024 Water is Life. Todos los derechos reservados.</p>
+          <p>© 2024 Water is Life. All rights reserved.</p>
           <p className="mt-2">
-            Organización sin fines de lucro dedicada a llevar agua limpia a comunidades necesitadas
+            Nonprofit organization dedicated to bringing clean water to communities in need
           </p>
         </div>
       </div>

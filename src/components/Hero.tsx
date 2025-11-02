@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="text-center mb-12 animate-fade-in">
             <img 
               src={waterLifeLogo} 
-              alt="Water is Life - Colegio Craighouse" 
+              alt="Water is Life - Craighouse School" 
               className="mx-auto mb-8 w-full max-w-2xl h-auto"
             />
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -28,7 +28,7 @@ const Hero = () => {
               <Droplet className="w-12 h-12 text-white animate-bounce delay-150" />
             </div>
             <p className="text-2xl md:text-3xl text-white/90 font-light mb-8">
-              Llevando Agua Limpia a Familias Chilenas
+              Bringing Clean Water to Families in Chile
             </p>
           </div>
 
@@ -38,7 +38,7 @@ const Hero = () => {
               <iframe
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/0xobBO0NLuY?rel=0"
-                title="Water is Life - Proyecto"
+                title="Water is Life - Project"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
@@ -48,20 +48,20 @@ const Hero = () => {
           {/* Emotional Introduction */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/20 mb-12 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-              Nuestro Proyecto: Una Gota de Esperanza
+              Our Project: A Drop of Hope
             </h2>
             <div className="text-white/90 text-lg leading-relaxed space-y-4">
               <p>
-                <strong>En Chile, miles de familias enfrentan una realidad desgarradora:</strong> no tienen acceso a agua limpia y segura para beber, cocinar o mantener su higiene básica. Solo el <strong>29% de la población de bajos ingresos</strong> tiene acceso a agua gestionada de forma segura, y una de cada cuatro escuelas primarias carece de servicio de agua.
+                <strong>In Chile, thousands of families face a heartbreaking reality:</strong> they lack access to clean, safe water for drinking, cooking, or basic hygiene. Only <strong>29% of low-income households</strong> have safely managed water, and one in four primary schools has no water service.
               </p>
               <p>
-                El agua contaminada causa aproximadamente <strong>829,000 muertes por diarrea cada año</strong> en el mundo. Cuando las familias mejoran su acceso al agua, el tiempo dedicado a recolectarla disminuye, y aumentan la productividad y la salud comunitaria.
+                Contaminated water causes approximately <strong>829,000 deaths from diarrhea every year</strong> worldwide. When families gain reliable access to water, the time spent collecting it drops while productivity and community health rise.
               </p>
               <p>
-                <strong>Water is Life</strong> es una organización sin fines de lucro con más de 15 años de experiencia, cuya misión es llevar agua potable segura, saneamiento e higiene a comunidades vulnerables, principalmente en África y América Latina. Su objetivo es alcanzar <strong>1 millón de personas para 2030</strong> con acceso a agua segura en hogares, escuelas, orfanatos y centros de salud.
+                <strong>Water is Life</strong> is a nonprofit with more than 15 years of experience bringing safe drinking water, sanitation, and hygiene to vulnerable communities across Africa and Latin America. Their goal is to reach <strong>1 million people by 2030</strong> with dependable access to safe water at home, in schools, orphanages, and health centers.
               </p>
               <p className="text-xl font-semibold text-white border-l-4 border-aqua-bright pl-4">
-                Nuestro proyecto nace de esta iniciativa: cada curso del Colegio Craighouse, desde Prekínder hasta IV Medio, donará un <strong>Balde Ultrafiltro</strong> que proporcionará agua bacteriológicamente segura a una familia durante <strong>3-5 años</strong>, utilizando tecnología de ultrafiltración por nanotubos.
+                Our project grows out of this mission: every grade at Craighouse School, from pre-kindergarten through 12th grade, will donate an <strong>Ultra Filter Bucket</strong> that provides bacteriologically safe water to a family for <strong>3-5 years</strong> using nanotube ultrafiltration technology.
               </p>
             </div>
           </div>
@@ -74,7 +74,7 @@ const Hero = () => {
               onClick={() => document.getElementById('donate')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Heart className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform" />
-              Donar Ahora
+              Donate Now
             </Button>
             <Button 
               size="lg" 
@@ -83,7 +83,7 @@ const Hero = () => {
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Play className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform" />
-              Conoce Más
+              Learn More
             </Button>
           </div>
         </div>

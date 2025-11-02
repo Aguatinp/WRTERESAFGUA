@@ -35,8 +35,8 @@ const DonateSection = () => {
       });
 
       // Simulate payment process (in real implementation, integrate Stripe/Webpay here)
-      toast.success("Procesando pago...", {
-        description: "Redirigiendo a la pasarela de pago...",
+      toast.success("Processing payment...", {
+        description: "Redirecting to the payment gateway...",
       });
 
       // Simulate successful payment after 2 seconds
@@ -47,8 +47,8 @@ const DonateSection = () => {
           paymentId: "SIMULATED_PAYMENT_" + Date.now(),
         });
         
-        toast.success("¡Pago completado exitosamente!", {
-          description: "Pronto recibirás información sobre la familia beneficiada.",
+        toast.success("Payment completed successfully!", {
+          description: "You will receive information about the recipient family soon.",
         });
         
         // Reset form
@@ -62,7 +62,7 @@ const DonateSection = () => {
       }, 2000);
 
     } catch (error) {
-      toast.error("Error al procesar la donación");
+      toast.error("There was an error processing the donation");
     }
   };
 
@@ -72,10 +72,10 @@ const DonateSection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Haz tu Donación
+              Make Your Donation
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Tu donación llevará agua limpia a una familia que la necesita. Completa el formulario para comenzar.
+              Your gift will bring clean water to a family in need. Complete the form to get started.
             </p>
           </div>
 
@@ -84,19 +84,19 @@ const DonateSection = () => {
             <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="donorName">Nombre de la Familia/Clase Donante *</Label>
+                  <Label htmlFor="donorName">Donor Family/Class Name *</Label>
                   <Input
                     id="donorName"
                     required
                     value={formData.donorName}
                     onChange={(e) => setFormData({ ...formData, donorName: e.target.value })}
-                    placeholder="Ej: Familia González o 5° Básico A"
+                    placeholder="e.g., Gonzalez Family or 5th Grade A"
                     className="mt-2"
                   />
                 </div>
 
                 <div>
-                  <Label htmlFor="email">Email de Contacto *</Label>
+                  <Label htmlFor="email">Contact Email *</Label>
                   <Input
                     id="email"
                     type="email"
@@ -109,7 +109,7 @@ const DonateSection = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="courseId">Selecciona tu Curso *</Label>
+                  <Label htmlFor="courseId">Select Your Class *</Label>
                   <select
                     id="courseId"
                     required
@@ -118,17 +118,17 @@ const DonateSection = () => {
                     className="w-full mt-2 px-3 py-2 rounded-md border border-input bg-background text-foreground"
                     disabled={coursesLoading}
                   >
-                    <option value="">-- Selecciona un curso --</option>
+                    <option value="">-- Select a class --</option>
                     {courses?.map((course) => (
                       <option key={course.id} value={course.id}>
-                        {course.full_name} ({course.houses_donated} casas donadas)
+                        {course.full_name} ({course.houses_donated} homes funded)
                       </option>
                     ))}
                   </select>
                 </div>
 
                 <div>
-                  <Label htmlFor="donationType">Tipo de Donación *</Label>
+                  <Label htmlFor="donationType">Donation Type *</Label>
                   <select
                     id="donationType"
                     required
@@ -136,18 +136,18 @@ const DonateSection = () => {
                     onChange={(e) => setFormData({ ...formData, donationType: e.target.value })}
                     className="w-full mt-2 px-3 py-2 rounded-md border border-input bg-background text-foreground"
                   >
-                    <option value="class">Donación de Curso ($50.000)</option>
-                    <option value="family">Donación Familiar ($50.000)</option>
+                    <option value="class">Class Donation ($50,000)</option>
+                    <option value="family">Family Donation ($50,000)</option>
                   </select>
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Mensaje para la Familia Beneficiada (Opcional)</Label>
+                  <Label htmlFor="message">Message for the Recipient Family (Optional)</Label>
                   <Textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Escribe un mensaje de esperanza..."
+                    placeholder="Share a message of encouragement..."
                     className="mt-2 min-h-[100px]"
                   />
                 </div>
@@ -160,11 +160,11 @@ const DonateSection = () => {
                   {createDonation.isPending || updateDonationStatus.isPending ? (
                     <>
                       <Loader2 className="mr-2 w-5 h-5 animate-spin" />
-                      Procesando...
+                      Processing...
                     </>
                   ) : (
                     <>
-                      Proceder con la Donación
+                      Complete Donation
                       <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
@@ -176,47 +176,47 @@ const DonateSection = () => {
             <div className="space-y-6">
               <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-white">
                 <Heart className="w-12 h-12 mb-4" />
-                <h3 className="text-2xl font-bold mb-4">Tu Impacto</h3>
+                <h3 className="text-2xl font-bold mb-4">Your Impact</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <span className="text-2xl">💧</span>
-                    <span>3-5 años de agua limpia para una familia</span>
+                    <span>3-5 years of clean water for a family</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-2xl">❤️</span>
-                    <span>Conexión directa con la familia beneficiada</span>
+                    <span>Direct connection with the recipient family</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-2xl">📊</span>
-                    <span>Seguimiento del impacto de tu donación</span>
+                    <span>Track the ongoing impact of your donation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-2xl">🌍</span>
-                    <span>Contribución a la meta de 1 millón de personas</span>
+                    <span>Contribute to the goal of reaching 1 million people</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
-                <h3 className="text-xl font-bold mb-4 text-foreground">¿Qué Sucede Después?</h3>
+                <h3 className="text-xl font-bold mb-4 text-foreground">What Happens Next?</h3>
                 <ol className="space-y-4">
                   <li className="flex gap-3">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 text-primary font-bold">
                       1
                     </div>
-                    <p className="text-muted-foreground pt-1">Procesamos tu donación y asignamos un filtro</p>
+                    <p className="text-muted-foreground pt-1">We process your donation and assign a filter</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 text-secondary font-bold">
                       2
                     </div>
-                    <p className="text-muted-foreground pt-1">Entregamos el filtro a una familia necesitada</p>
+                    <p className="text-muted-foreground pt-1">We deliver the filter to a family in need</p>
                   </li>
                   <li className="flex gap-3">
                     <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0 text-accent font-bold">
                       3
                     </div>
-                    <p className="text-muted-foreground pt-1">Recibes información sobre la familia y puedes conectar con ellos</p>
+                    <p className="text-muted-foreground pt-1">You receive information about the family and can connect with them</p>
                   </li>
                 </ol>
               </div>

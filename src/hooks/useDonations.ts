@@ -141,10 +141,10 @@ export const useCreateDonation = () => {
       queryClient.invalidateQueries({ queryKey: ["donations"] });
       queryClient.invalidateQueries({ queryKey: ["courses"] });
       queryClient.invalidateQueries({ queryKey: ["houses"] });
-      toast.success("¡Donación creada exitosamente!");
+      toast.success("Donation created successfully!");
     },
     onError: (error) => {
-      toast.error("Error al crear la donación: " + error.message);
+      toast.error("Error creating donation: " + error.message);
     },
   });
 };
@@ -199,7 +199,7 @@ export const useGlobalStats = () => {
       return {
         totalAmount,
         totalHouses,
-        totalGoal: 10000000, // Meta de 10 millones
+        totalGoal: 10000000, // Goal of 10 million
         goalHouses: 200
       };
     },
