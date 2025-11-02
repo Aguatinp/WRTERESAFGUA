@@ -37,7 +37,7 @@ const Hero = () => {
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-black">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
+                src="https://www.youtube.com/embed/0xobBO0NLuY?rel=0"
                 title="Water is Life - Proyecto"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
