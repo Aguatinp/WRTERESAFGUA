@@ -39,9 +39,6 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("how")} className="text-foreground hover:text-primary transition-colors">
               How to Give
             </button>
-            <Button onClick={() => scrollToSection("donate")} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity shadow-lg">
-              DONATE
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -62,9 +59,6 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("how")} className="text-foreground hover:text-primary transition-colors text-left">
               How to Give
             </button>
-            <Button onClick={() => scrollToSection("donate")} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
-              DONATE
-            </Button>
           </div>
         )}
       </div>

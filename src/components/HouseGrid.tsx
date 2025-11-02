@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 
 const HouseGrid = () => {
+  const TOTAL_HOUSES = 138;
   const { data: houses, isLoading } = useHouses();
 
   if (isLoading) {
@@ -26,7 +27,7 @@ const HouseGrid = () => {
             Homes with Clean Water
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Each home represents a family that now has access to clean water thanks to the generosity of our donor classes.
+            Each home represents a family that now has access to clean water thanks to the generosity of our donor classes. We are tracking 138 homes in this overview.
           </p>
         </div>
 
@@ -34,7 +35,7 @@ const HouseGrid = () => {
             <div className="bg-card rounded-2xl p-8 shadow-lg border border-border mb-12">
               <TooltipProvider>
                 <div className="grid grid-cols-10 sm:grid-cols-12 md:grid-cols-15 lg:grid-cols-18 gap-2 max-w-7xl mx-auto">
-                  {houses?.map((house) => (
+              {houses?.slice(0, TOTAL_HOUSES).map((house) => (
                     <Tooltip key={house.id}>
                       <TooltipTrigger asChild>
                         <div className="relative group cursor-pointer">

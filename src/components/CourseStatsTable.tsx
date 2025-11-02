@@ -115,7 +115,16 @@ const CourseStatsTable = () => {
 
   const courseList = courses ?? [];
   const groupedCourses = LEVEL_SEQUENCE.map((levelKey) => {
-    const levelCourses = courseList.filter((course) => normalizeLevelKey(course.level) === levelKey);
+    const allowSectionG = getLevelRank(levelKey) <= getLevelRank("6_basico");
+    const allowedMaxLetter = allowSectionG ? "G" : "F";
+
+    const levelCourses = courseList.filter((course) => {
+      const normalized = normalizeLevelKey(course.level);
+      if (normalized !== levelKey) return false;
+      const sectionLetter = (course.section ?? "").trim().toUpperCase();
+      if (!sectionLetter) return true;
+      return sectionLetter <= allowedMaxLetter;
+    });
     if (levelCourses.length === 0) return null;
 
     const orderedByPerformance = [...levelCourses].sort((a, b) => {
@@ -163,7 +172,7 @@ const CourseStatsTable = () => {
         </div>
 
         <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
-          <Accordion type="multiple" defaultValue={groupedCourses.slice(0, 3).map((group) => group.levelKey)}>
+          <Accordion type="multiple">
             {groupedCourses.map((group) => (
               <AccordionItem key={group.levelKey} value={group.levelKey}>
                 <AccordionTrigger className="px-6">

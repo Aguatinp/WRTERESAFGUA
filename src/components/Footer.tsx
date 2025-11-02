@@ -57,7 +57,6 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
-                <span>Santiago, Chile</span>
                 <span>Av. Paseo Pie Andino 8837</span>
               </li>
             </ul>
@@ -65,8 +64,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
-          <p>© 2024 Water is Life. All rights reserved.</p>
-          <p className="mt-2">
+          <p>
             Nonprofit organization dedicated to bringing clean water to communities in need
           </p>
         </div>

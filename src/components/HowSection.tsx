@@ -1,14 +1,6 @@
-import { GraduationCap, Users2, Gift, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GraduationCap, Users2, Gift } from "lucide-react";
 
 const HowSection = () => {
-  const scrollToDonate = () => {
-    const element = document.getElementById("donate");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="how" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -62,20 +54,12 @@ const HowSection = () => {
         <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl p-8 md:p-12 text-white">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-3xl font-bold mb-6">The Donation Experience</h3>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed">
               Once each class has raised enough for a filter, we donate it to communities in Chile that lack access to clean water.
               <span className="block mt-4 font-semibold">
                 The donating family can stay in touch with the family who receives the filter, making the impact personal.
               </span>
             </p>
-            <Button 
-              onClick={scrollToDonate}
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-6 shadow-xl group"
-            >
-              Start Your Donation
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
         </div>
 
