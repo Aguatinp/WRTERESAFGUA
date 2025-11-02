@@ -58,6 +58,7 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 <span>Santiago, Chile</span>
+                <span>Av. Paseo Pie Andino 8837</span>
               </li>
             </ul>
           </div>

@@ -8,7 +8,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Progress } from "@/components/ui/progress";
-import { Trophy, TrendingUp } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Medal } from "lucide-react";
 
 const LEVEL_SEQUENCE = [
   "prekinder",
@@ -28,6 +29,23 @@ const LEVEL_SEQUENCE = [
 ];
 
 const LEVEL_RANK = new Map(LEVEL_SEQUENCE.map((level, index) => [level, index]));
+
+const LEVEL_LABELS: Record<string, string> = {
+  prekinder: "Prekínder",
+  kinder: "Kínder",
+  "1_basico": "1° Básico",
+  "2_basico": "2° Básico",
+  "3_basico": "3° Básico",
+  "4_basico": "4° Básico",
+  "5_basico": "5° Básico",
+  "6_basico": "6° Básico",
+  "7_basico": "7° Básico",
+  "8_basico": "8° Básico",
+  "1_medio": "I Medio",
+  "2_medio": "II Medio",
+  "3_medio": "III Medio",
+  "4_medio": "IV Medio",
+};
 
 const normalizeLevelKey = (level?: string | null) => {
   if (!level) return "";
@@ -96,15 +114,41 @@ const CourseStatsTable = () => {
   }
 
   const courseList = courses ?? [];
-  const sortedCourses = [...courseList].sort(compareCourses);
+  const groupedCourses = LEVEL_SEQUENCE.map((levelKey) => {
+    const levelCourses = courseList.filter((course) => normalizeLevelKey(course.level) === levelKey);
+    if (levelCourses.length === 0) return null;
 
-  const topByHouses = [...courseList].sort((a, b) => b.houses_donated - a.houses_donated);
-  const topCourse = topByHouses.find((entry) => entry.houses_donated > 0);
-  const topThreeIds = new Set(
-    topByHouses
-      .filter((entry, index) => index < 3 && entry.houses_donated > 0)
-      .map((entry) => entry.id)
-  );
+    const orderedByPerformance = [...levelCourses].sort((a, b) => {
+      const houseDiff = b.houses_donated - a.houses_donated;
+      if (houseDiff !== 0) return houseDiff;
+      const amountDiff = b.current_amount - a.current_amount;
+      if (amountDiff !== 0) return amountDiff;
+      return a.full_name.localeCompare(b.full_name, "es", { sensitivity: "base" });
+    });
+
+    return {
+      levelKey,
+      displayName: LEVEL_LABELS[levelKey] ?? levelKey,
+      courses: orderedByPerformance,
+      leader: orderedByPerformance[0],
+    };
+  }).filter(Boolean) as Array<{
+    levelKey: string;
+    displayName: string;
+    courses: typeof courseList;
+    leader: typeof courseList[number];
+  }>;
+
+  if (groupedCourses.length === 0) {
+    return (
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 text-center text-muted-foreground">
+          <h2 className="text-3xl font-semibold text-foreground mb-4">Course Leaderboard</h2>
+          <p>No course data is available yet.</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-background">
@@ -114,81 +158,83 @@ const CourseStatsTable = () => {
             Course Leaderboard
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            We celebrate each class for its generosity and commitment to this project.
+            Explore the leading class in each generation and dive into their progress.
           </p>
         </div>
 
-        {/* Top Course Highlight */}
-        {topCourse && (
-          <div className="max-w-4xl mx-auto mb-12 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white shadow-2xl">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <Trophy className="w-16 h-16" />
-              <div className="text-center">
-                <p className="text-xl font-semibold opacity-90">Top Course</p>
-                <p className="text-4xl font-bold">{topCourse.full_name}</p>
-                <p className="text-2xl opacity-90">{topCourse.houses_donated} homes funded</p>
-              </div>
-              <Trophy className="w-16 h-16" />
-            </div>
-          </div>
-        )}
-
-        {/* Table */}
-        <div className="max-w-6xl mx-auto bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-muted/50">
-                <TableHead className="w-16">#</TableHead>
-                <TableHead>Course</TableHead>
-                <TableHead className="text-center">Homes Donated</TableHead>
-                <TableHead className="text-center">Amount Raised</TableHead>
-                <TableHead className="text-center">Progress</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {sortedCourses.map((course, index) => {
-                const progress = (course.current_amount / course.goal_amount) * 100;
-                const isTopThree = topThreeIds.has(course.id);
-
-                return (
-                  <TableRow
-                    key={course.id}
-                    className={isTopThree ? "bg-primary/5" : ""}
-                  >
-                    <TableCell className="font-semibold">
-                      <div className="flex items-center gap-2">
-                        {isTopThree && (
-                          <TrendingUp className="w-4 h-4 text-primary" />
-                        )}
-                        {index + 1}
-                      </div>
-                    </TableCell>
-                    <TableCell className="font-semibold">{course.full_name}</TableCell>
-                    <TableCell className="text-center">
-                      <span className={`inline-block px-3 py-1 rounded-full ${
-                        course.houses_donated > 0 
-                          ? "bg-primary/10 text-primary font-bold" 
-                          : "bg-muted text-muted-foreground"
-                      }`}>
-                        {course.houses_donated}
-                      </span>
-                    </TableCell>
-                    <TableCell className="text-center font-semibold">
-                      ${course.current_amount.toLocaleString()}
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center gap-2">
-                        <Progress value={progress} className="flex-1" />
-                        <span className="text-sm text-muted-foreground w-12">
-                          {progress.toFixed(0)}%
+        <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
+          <Accordion type="multiple" defaultValue={groupedCourses.slice(0, 3).map((group) => group.levelKey)}>
+            {groupedCourses.map((group) => (
+              <AccordionItem key={group.levelKey} value={group.levelKey}>
+                <AccordionTrigger className="px-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 w-full">
+                    <span className="text-lg font-semibold text-foreground">{group.displayName}</span>
+                    {group.leader && (
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground sm:ml-auto">
+                        <Medal className="w-4 h-4 text-primary" />
+                        <span>
+                          Leading course: <strong className="text-foreground">{group.leader.full_name}</strong>
                         </span>
                       </div>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
+                    )}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-muted/30">
+                        <TableHead className="w-16">#</TableHead>
+                        <TableHead>Course</TableHead>
+                        <TableHead className="text-center">Homes Donated</TableHead>
+                        <TableHead className="text-center">Amount Raised</TableHead>
+                        <TableHead className="text-center">Progress</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {group.courses.map((course, index) => {
+                        const progress = (course.current_amount / course.goal_amount) * 100;
+                        const isLeader = course.id === group.leader?.id;
+
+                        return (
+                          <TableRow key={course.id} className={isLeader ? "bg-primary/5" : ""}>
+                            <TableCell className="font-semibold">
+                              <div className="flex items-center gap-2">
+                                {isLeader && <Medal className="w-4 h-4 text-primary" />}
+                                {index + 1}
+                              </div>
+                            </TableCell>
+                            <TableCell className="font-semibold">{course.full_name}</TableCell>
+                            <TableCell className="text-center">
+                              <span
+                                className={`inline-block min-w-[2rem] px-3 py-1 rounded-full ${
+                                  course.houses_donated > 0
+                                    ? "bg-primary/10 text-primary font-bold"
+                                    : "bg-muted text-muted-foreground"
+                                }`}
+                              >
+                                {course.houses_donated}
+                              </span>
+                            </TableCell>
+                            <TableCell className="text-center font-semibold">
+                              ${course.current_amount.toLocaleString()}
+                            </TableCell>
+                            <TableCell>
+                              <div className="flex items-center gap-2">
+                                <Progress value={progress} className="flex-1" />
+                                <span className="text-sm text-muted-foreground w-12 text-right">
+                                  {progress.toFixed(0)}%
+                                </span>
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
