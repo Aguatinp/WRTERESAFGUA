@@ -6,7 +6,6 @@ import HowSection from "@/components/HowSection";
 import GlobalStats from "@/components/GlobalStats";
 import HouseGrid from "@/components/HouseGrid";
 import CourseStatsTable from "@/components/CourseStatsTable";
-import DonateSection from "@/components/DonateSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,7 +19,6 @@ const Index = () => {
       <GlobalStats />
       <HouseGrid />
       <CourseStatsTable />
-      <DonateSection />
       <Footer />
     </div>
   );

@@ -47,13 +47,13 @@ const Footer = () => {
             <ul className="space-y-3 text-white/80">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:info@waterislife.org" className="hover:text-white transition-colors">
-                  info@waterislife.org
+                <a href="mailto:miconvalia@craighouse.cl" className="hover:text-white transition-colors">
+                  miconvalia@craighouse.cl
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+56 9 1234 5678</span>
+                <span>+56 9 9548 3093</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
