@@ -31,7 +31,7 @@ const DonationMap = () => {
               </p>
               <input
                 type="text"
-                placeholder="Ingresa tu Mapbox Token"
+                placeholder="Ingresa tu token de Mapbox"
                 value={mapboxToken}
                 onChange={(e) => setMapboxToken(e.target.value)}
                 className="px-4 py-2 rounded-lg border border-input bg-background text-foreground w-full max-w-md"

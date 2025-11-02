@@ -17,7 +17,7 @@ const Hero = () => {
           <div className="text-center mb-12 animate-fade-in">
             <img 
               src={waterLifeLogo} 
-              alt="Water is Life - Craighouse School" 
+              alt="Water is Life - Colegio Craighouse" 
               className="mx-auto mb-8 w-full max-w-2xl h-auto"
             />
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -61,7 +61,7 @@ const Hero = () => {
                 <strong>Water is Life</strong> es una organización sin fines de lucro con más de 15 años de experiencia, cuya misión es llevar agua potable segura, saneamiento e higiene a comunidades vulnerables, principalmente en África y América Latina. Su objetivo es alcanzar <strong>1 millón de personas para 2030</strong> con acceso a agua segura en hogares, escuelas, orfanatos y centros de salud.
               </p>
               <p className="text-xl font-semibold text-white border-l-4 border-aqua-bright pl-4">
-                Nuestro proyecto nace de esta iniciativa: cada curso de Craighouse School, desde Prekínder hasta IV Medio, donará un <strong>Balde Ultrafiltro</strong> que proporcionará agua bacteriológicamente segura a una familia durante <strong>3-5 años</strong>, utilizando tecnología de ultrafiltración por nanotubos.
+                Nuestro proyecto nace de esta iniciativa: cada curso del Colegio Craighouse, desde Prekínder hasta IV Medio, donará un <strong>Balde Ultrafiltro</strong> que proporcionará agua bacteriológicamente segura a una familia durante <strong>3-5 años</strong>, utilizando tecnología de ultrafiltración por nanotubos.
               </p>
             </div>
           </div>
