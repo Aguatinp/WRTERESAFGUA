@@ -1,4 +1,5 @@
 import { Droplets, Users, Target } from "lucide-react";
+import bucketImage from "@/assets/bucket.png";
 
 const AboutSection = () => {
   return (
@@ -53,11 +54,11 @@ const AboutSection = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20 bg-white flex items-center justify-center p-6">
               <img
-                src="https://images.unsplash.com/photo-1581093458791-9d42e55b3c3f?w=800&h=600&fit=crop"
-                alt="Clean water for communities"
-                className="w-full h-full object-cover"
+                src={bucketImage}
+                alt="Water is Life ultra filter bucket"
+                className="w-full h-full object-contain"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-accent to-secondary rounded-full blur-3xl opacity-30 -z-10" />
