@@ -39,9 +39,6 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("how")} className="text-foreground hover:text-primary transition-colors">
               How to Give
             </button>
-            <button onClick={() => scrollToSection("map")} className="text-foreground hover:text-primary transition-colors">
-              Impact Map
-            </button>
             <Button onClick={() => scrollToSection("donate")} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity shadow-lg">
               DONATE
             </Button>
@@ -64,9 +61,6 @@ const Navbar = () => {
             </button>
             <button onClick={() => scrollToSection("how")} className="text-foreground hover:text-primary transition-colors text-left">
               How to Give
-            </button>
-            <button onClick={() => scrollToSection("map")} className="text-foreground hover:text-primary transition-colors text-left">
-              Impact Map
             </button>
             <Button onClick={() => scrollToSection("donate")} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
               DONATE

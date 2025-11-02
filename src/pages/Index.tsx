@@ -6,7 +6,6 @@ import HowSection from "@/components/HowSection";
 import GlobalStats from "@/components/GlobalStats";
 import HouseGrid from "@/components/HouseGrid";
 import CourseStatsTable from "@/components/CourseStatsTable";
-import DonationMap from "@/components/DonationMap";
 import DonateSection from "@/components/DonateSection";
 import Footer from "@/components/Footer";
 
@@ -21,7 +20,6 @@ const Index = () => {
       <GlobalStats />
       <HouseGrid />
       <CourseStatsTable />
-      <DonationMap />
       <DonateSection />
       <Footer />
     </div>

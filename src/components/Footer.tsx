@@ -38,11 +38,6 @@ const Footer = () => {
                   How to Give
                 </button>
               </li>
-              <li>
-                <button onClick={() => document.getElementById("map")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-white transition-colors">
-                  Impact Map
-                </button>
-              </li>
             </ul>
           </div>
 
