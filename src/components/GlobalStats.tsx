@@ -11,74 +11,66 @@ const GlobalStats = () => {
   const amountProgressPercentage = (stats.totalAmount / stats.totalGoal) * 100;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Project Impact at a Glance
-          </h2>
-          <p className="text-xl text-white/90 leading-relaxed mb-12">
-            Together we are changing lives, one household at a time.
+    <div className="space-y-10">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold text-foreground md:text-4xl">Impacto del proyecto</h2>
+        <p className="mt-3 text-muted-foreground md:text-lg">
+          Cada filtro entregado acerca a otra familia a una vida con agua limpia y segura.
+        </p>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-border bg-gradient-to-br from-primary/10 to-primary/5 p-6 shadow-sm">
+          <div className="flex items-center gap-4">
+            <Home className="h-12 w-12 text-primary" />
+            <div>
+              <p className="text-sm font-medium text-primary">Hogares financiados</p>
+              <p className="text-4xl font-bold text-foreground">{stats.totalHouses}</p>
+            </div>
+          </div>
+          <Progress value={progressPercentage} className="mt-6" />
+          <p className="mt-2 text-sm text-muted-foreground">
+            Meta: {stats.goalHouses} hogares ({progressPercentage.toFixed(1)}%)
           </p>
+        </div>
 
-          {/* Main Stats Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Houses Donated */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <Home className="w-12 h-12" />
-                <div className="text-left">
-                  <p className="text-5xl font-bold">{stats.totalHouses}</p>
-                  <p className="text-white/80 text-lg">Homes Funded</p>
-                </div>
-              </div>
-              <Progress value={progressPercentage} className="h-3 bg-white/20" />
-              <p className="mt-2 text-sm text-white/70">
-                Goal: {stats.goalHouses} homes ({progressPercentage.toFixed(1)}%)
-              </p>
-            </div>
-
-            {/* Total Raised */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <Target className="w-12 h-12" />
-                <div className="text-left">
-                  <p className="text-5xl font-bold">
-                    ${(stats.totalAmount / 1000000).toFixed(1)}M
-                  </p>
-                  <p className="text-white/80 text-lg">Raised</p>
-                </div>
-              </div>
-              <Progress value={amountProgressPercentage} className="h-3 bg-white/20" />
-              <p className="mt-2 text-sm text-white/70">
-                Goal: ${(stats.totalGoal / 1000000).toFixed(1)}M ({amountProgressPercentage.toFixed(1)}%)
+        <div className="rounded-2xl border border-border bg-gradient-to-br from-secondary/10 to-secondary/5 p-6 shadow-sm">
+          <div className="flex items-center gap-4">
+            <Target className="h-12 w-12 text-secondary" />
+            <div>
+              <p className="text-sm font-medium text-secondary">Fondos recaudados</p>
+              <p className="text-4xl font-bold text-foreground">
+                ${(stats.totalAmount / 1000000).toFixed(1)}M
               </p>
             </div>
           </div>
-
-          {/* Additional Stats */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <Droplet className="w-10 h-10 mx-auto mb-3" />
-              <p className="text-3xl font-bold">{stats.totalHouses * 5}</p>
-              <p className="text-white/70">Families with clean water for 3-5 years</p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <TrendingUp className="w-10 h-10 mx-auto mb-3" />
-              <p className="text-3xl font-bold">{stats.totalHouses * 20}+</p>
-              <p className="text-white/70">People reached</p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-              <Home className="w-10 h-10 mx-auto mb-3" />
-              <p className="text-3xl font-bold">{stats.goalHouses - stats.totalHouses}</p>
-              <p className="text-white/70">Homes still needed</p>
-            </div>
-          </div>
+          <Progress value={amountProgressPercentage} className="mt-6" />
+          <p className="mt-2 text-sm text-muted-foreground">
+            Meta: ${(stats.totalGoal / 1000000).toFixed(1)}M ({amountProgressPercentage.toFixed(1)}%)
+          </p>
         </div>
       </div>
-    </section>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <Droplet className="h-10 w-10 text-primary" />
+          <p className="mt-4 text-3xl font-bold text-foreground">{stats.totalHouses * 5}</p>
+          <p className="text-sm text-muted-foreground">Familias con agua limpia durante 3-5 años</p>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <TrendingUp className="h-10 w-10 text-secondary" />
+          <p className="mt-4 text-3xl font-bold text-foreground">{stats.totalHouses * 20}+</p>
+          <p className="text-sm text-muted-foreground">Personas alcanzadas estimadas</p>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <Home className="h-10 w-10 text-accent" />
+          <p className="mt-4 text-3xl font-bold text-foreground">
+            {Math.max(stats.goalHouses - stats.totalHouses, 0)}
+          </p>
+          <p className="text-sm text-muted-foreground">Hogares que aún necesitan filtro</p>
+        </div>
+      </div>
+    </div>
   );
 };
 

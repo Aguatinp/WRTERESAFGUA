@@ -150,103 +150,97 @@ const CourseStatsTable = () => {
 
   if (groupedCourses.length === 0) {
     return (
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <h2 className="text-3xl font-semibold text-foreground mb-4">Course Leaderboard</h2>
-          <p>No course data is available yet.</p>
-        </div>
-      </section>
+      <div className="text-center text-muted-foreground">
+        <h2 className="mb-2 text-2xl font-semibold text-foreground">Course Leaderboard</h2>
+        <p>Aún no hay datos disponibles para los cursos.</p>
+      </div>
     );
   }
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            Course Leaderboard
-          </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Explore the leading class in each generation and dive into their progress.
-          </p>
-        </div>
-
-        <div className="max-w-5xl mx-auto bg-card rounded-2xl shadow-lg border border-border overflow-hidden">
-          <Accordion type="multiple">
-            {groupedCourses.map((group) => (
-              <AccordionItem key={group.levelKey} value={group.levelKey}>
-                <AccordionTrigger className="px-6">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 w-full">
-                    <span className="text-lg font-semibold text-foreground">{group.displayName}</span>
-                    {group.leader && (
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground sm:ml-auto">
-                        <Medal className="w-4 h-4 text-primary" />
-                        <span>
-                          Leading course: <strong className="text-foreground">{group.leader.full_name}</strong>
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6">
-                  <Table>
-                    <TableHeader>
-                      <TableRow className="bg-muted/30">
-                        <TableHead className="w-16">#</TableHead>
-                        <TableHead>Course</TableHead>
-                        <TableHead className="text-center">Homes Donated</TableHead>
-                        <TableHead className="text-center">Amount Raised</TableHead>
-                        <TableHead className="text-center">Progress</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {group.courses.map((course, index) => {
-                        const progress = (course.current_amount / course.goal_amount) * 100;
-                        const isLeader = course.id === group.leader?.id;
-
-                        return (
-                          <TableRow key={course.id} className={isLeader ? "bg-primary/5" : ""}>
-                            <TableCell className="font-semibold">
-                              <div className="flex items-center gap-2">
-                                {isLeader && <Medal className="w-4 h-4 text-primary" />}
-                                {index + 1}
-                              </div>
-                            </TableCell>
-                            <TableCell className="font-semibold">{course.full_name}</TableCell>
-                            <TableCell className="text-center">
-                              <span
-                                className={`inline-block min-w-[2rem] px-3 py-1 rounded-full ${
-                                  course.houses_donated > 0
-                                    ? "bg-primary/10 text-primary font-bold"
-                                    : "bg-muted text-muted-foreground"
-                                }`}
-                              >
-                                {course.houses_donated}
-                              </span>
-                            </TableCell>
-                            <TableCell className="text-center font-semibold">
-                              ${course.current_amount.toLocaleString()}
-                            </TableCell>
-                            <TableCell>
-                              <div className="flex items-center gap-2">
-                                <Progress value={progress} className="flex-1" />
-                                <span className="text-sm text-muted-foreground w-12 text-right">
-                                  {progress.toFixed(0)}%
-                                </span>
-                              </div>
-                            </TableCell>
-                          </TableRow>
-                        );
-                      })}
-                    </TableBody>
-                  </Table>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+    <div className="space-y-8">
+      <div className="text-center">
+        <h2 className="text-3xl font-bold text-foreground md:text-4xl">Avance por curso</h2>
+        <p className="mt-2 text-muted-foreground">
+          Descubre qué cursos lideran la entrega de filtros en cada nivel.
+        </p>
       </div>
-    </section>
+
+      <div className="rounded-2xl border border-border bg-muted/20 shadow-sm">
+        <Accordion type="multiple">
+          {groupedCourses.map((group) => (
+            <AccordionItem key={group.levelKey} value={group.levelKey}>
+              <AccordionTrigger className="px-6">
+                <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+                  <span className="text-lg font-semibold text-foreground">{group.displayName}</span>
+                  {group.leader && (
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground sm:ml-auto">
+                      <Medal className="h-4 w-4 text-primary" />
+                      <span>
+                        Lidera: <strong className="text-foreground">{group.leader.full_name}</strong>
+                      </span>
+                    </div>
+                  )}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-6">
+                <Table>
+                  <TableHeader>
+                    <TableRow className="bg-muted">
+                      <TableHead className="w-16">#</TableHead>
+                      <TableHead>Curso</TableHead>
+                      <TableHead className="text-center">Hogares</TableHead>
+                      <TableHead className="text-center">Monto</TableHead>
+                      <TableHead className="text-center">Progreso</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {group.courses.map((course, index) => {
+                      const progress = (course.current_amount / course.goal_amount) * 100;
+                      const isLeader = course.id === group.leader?.id;
+
+                      return (
+                        <TableRow key={course.id} className={isLeader ? "bg-primary/5" : ""}>
+                          <TableCell className="font-semibold">
+                            <div className="flex items-center gap-2">
+                              {isLeader && <Medal className="h-4 w-4 text-primary" />}
+                              {index + 1}
+                            </div>
+                          </TableCell>
+                          <TableCell className="font-semibold">{course.full_name}</TableCell>
+                          <TableCell className="text-center">
+                            <span
+                              className={`inline-block min-w-[2rem] px-3 py-1 rounded-full ${
+                                course.houses_donated > 0
+                                  ? "bg-primary/10 text-primary font-bold"
+                                  : "bg-muted text-muted-foreground"
+                              }`}
+                            >
+                              {course.houses_donated}
+                            </span>
+                          </TableCell>
+                          <TableCell className="text-center font-semibold">
+                            ${course.current_amount.toLocaleString()}
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center gap-2">
+                              <Progress value={progress} className="flex-1" />
+                              <span className="w-12 text-right text-sm text-muted-foreground">
+                                {progress.toFixed(0)}%
+                              </span>
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </div>
   );
 };
 
