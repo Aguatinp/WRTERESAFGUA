@@ -54,14 +54,20 @@ const AboutSection = () => {
           </div>
 
           <div className="relative">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20 bg-white flex items-center justify-center p-6">
-              <img
-                src={bucketImage}
-                alt="Water is Life ultra filter bucket"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-accent to-secondary rounded-full blur-3xl opacity-30 -z-10" />
+            <figure className="overflow-hidden rounded-3xl border border-primary/30 bg-white shadow-2xl">
+              <div className="bg-gradient-to-b from-white to-primary/10 p-4 sm:p-6">
+                <img
+                  src={bucketImage}
+                  alt="Filtro Ultra Water is Life con manguera flexible"
+                  loading="lazy"
+                  className="mx-auto h-full w-full max-w-xl object-contain drop-shadow-2xl"
+                />
+              </div>
+              <figcaption className="border-t border-primary/20 bg-primary/5 px-6 py-4 text-center text-sm font-medium text-primary">
+                Filtro oficial de la categoría Water is Life (referencia del pantallazo)
+              </figcaption>
+            </figure>
+            <div className="absolute -bottom-6 -right-6 h-48 w-48 -z-10 rounded-full bg-gradient-to-br from-accent to-secondary opacity-30 blur-3xl" />
           </div>
         </div>
 

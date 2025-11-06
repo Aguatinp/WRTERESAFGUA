@@ -1,90 +1,79 @@
 import { Button } from "@/components/ui/button";
-import { Play, Heart, Droplet } from "lucide-react";
+import { Play, Droplet } from "lucide-react";
 import waterLifeLogo from "@/assets/water-life-logo.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-ocean-medium to-secondary">
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-aqua-bright rounded-full blur-3xl animate-pulse delay-1000" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-ocean-medium to-secondary">
+      <div className="pointer-events-none absolute inset-0 opacity-20">
+        <div className="absolute left-[10%] top-[-10%] h-60 w-60 rounded-full bg-white blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[5%] h-72 w-72 rounded-full bg-aqua-bright blur-[140px]" />
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Logo and Title */}
-          <div className="text-center mb-12 animate-fade-in">
-            <img 
-              src={waterLifeLogo} 
-              alt="Water is Life - Craighouse School" 
-              className="mx-auto mb-8 w-full max-w-2xl h-auto"
-            />
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Droplet className="w-12 h-12 text-white animate-bounce" />
-              <h1 className="text-5xl md:text-7xl font-bold text-white">
-                Water is Life
-              </h1>
-              <Droplet className="w-12 h-12 text-white animate-bounce delay-150" />
-            </div>
-            <p className="text-2xl md:text-3xl text-white/90 font-light mb-8">
-              Bringing Clean Water to Families in Chile
-            </p>
-          </div>
-
-          {/* Video Section */}
-          <div className="mb-12 animate-scale-in">
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-black">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/0xobBO0NLuY?rel=0"
-                title="Water is Life - Project"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr),minmax(0,1.1fr)] xl:gap-16">
+            <div className="space-y-6 text-white">
+              <img
+                src={waterLifeLogo}
+                alt="Water is Life - Craighouse School"
+                className="w-full max-w-sm rounded-2xl border border-white/10 bg-white/10 p-4 shadow-lg backdrop-blur"
               />
-            </div>
-          </div>
 
-          {/* Emotional Introduction */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/20 mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-              Our Project: A Drop of Hope
-            </h2>
-            <div className="text-white/90 text-lg leading-relaxed space-y-4">
-              <p>
-                <strong>In Chile, thousands of families face a heartbreaking reality:</strong> they lack access to clean, safe water for drinking, cooking, or basic hygiene. Only <strong>29% of low-income households</strong> have safely managed water, and one in four primary schools has no water service.
-              </p>
-              <p>
-                Contaminated water causes approximately <strong>829,000 deaths from diarrhea every year</strong> worldwide. When families gain reliable access to water, the time spent collecting it drops while productivity and community health rise.
-              </p>
-              <p>
-                <strong>Water is Life</strong> is a nonprofit with more than 15 years of experience bringing safe drinking water, sanitation, and hygiene to vulnerable communities across Africa and Latin America. Their goal is to reach <strong>1 million people by 2030</strong> with dependable access to safe water at home, in schools, orphanages, and health centers.
-              </p>
-              <p className="text-xl font-semibold text-white border-l-4 border-aqua-bright pl-4">
-                Our project grows out of this mission: every grade at Craighouse School, from pre-kindergarten through 12th grade, will donate an <strong>Ultra Filter Bucket</strong> that provides bacteriologically safe water to a family for <strong>3-5 years</strong> using nanotube ultrafiltration technology.
-              </p>
-            </div>
-          </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-white/70">
+                  <Droplet className="h-5 w-5 text-white" />
+                  <span>Proyecto comunitario</span>
+                </div>
+                <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">Water is Life</h1>
+                <p className="text-lg text-white/80 md:text-xl">
+                  Brindamos agua limpia a familias en Chile a través de filtros ultravioleta que duran hasta cinco años y
+                  conectan directamente a las comunidades con nuestras salas de clase.
+                </p>
+              </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-white/90 text-xl px-8 py-6 shadow-xl group"
-              onClick={() => document.getElementById('donate')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Heart className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform" />
-              Donate Now
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary text-xl px-8 py-6 group"
-              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Play className="w-6 h-6 mr-2 group-hover:scale-110 transition-transform" />
-              Learn More
-            </Button>
+              <div className="space-y-4 rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur">
+                <h2 className="text-2xl font-semibold text-white">Una gota de esperanza</h2>
+                <p className="text-white/90">
+                  <strong>29% de los hogares de bajos ingresos</strong> en Chile acceden a agua segura. Con cada filtro,
+                  una familia obtiene agua potable para cocinar, estudiar y vivir con dignidad durante <strong>3 a 5 años</strong>.
+                </p>
+                <p className="text-white/90">
+                  Cada curso de Craighouse se compromete con un balde ultrafiltro y mantiene el vínculo con la familia
+                  que recibe el apoyo.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="border border-white/20 bg-white/10 text-white hover:bg-white/20"
+                  onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                >
+                  <Play className="mr-2 h-5 w-5" />
+                  Conoce el proyecto
+                </Button>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-3xl bg-white/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/20 bg-black/40 shadow-2xl">
+                <div className="aspect-video">
+                  <iframe
+                    className="h-full w-full"
+                    src="https://www.youtube.com/embed/0xobBO0NLuY?rel=0"
+                    title="Water is Life - Project"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="px-6 py-4 text-sm text-white/80">
+                  Video resumen de la misión y el impacto de Water is Life en Chile.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
