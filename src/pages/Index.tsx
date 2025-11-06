@@ -77,7 +77,6 @@ const Index = () => {
                       className="relative z-10 h-auto w-full max-w-2xl object-contain drop-shadow-[0_30px_60px_rgba(15,94,156,0.45)]"
                     />
                   </figure>
-                  </figure>
                 </div>
 
                 <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
