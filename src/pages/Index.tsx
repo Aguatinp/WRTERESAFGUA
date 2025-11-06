@@ -25,7 +25,7 @@ const Index = () => {
                 <p className="text-lg font-semibold text-foreground md:text-xl">Water is Life</p>
               </div>
             </div>
-            <TabsList className="w-full max-w-xl justify-between rounded-full border border-sky-200 bg-sky-100/80 backdrop-blur md:w-auto md:justify-start">
+            <TabsList className="w-full max-w-full justify-between overflow-x-auto rounded-full border border-sky-200 bg-sky-100/80 backdrop-blur md:max-w-xl md:w-auto md:justify-start">
               <TabsTrigger value="informacion" className="flex-1 md:flex-none">
                 Informacion
               </TabsTrigger>
@@ -42,16 +42,16 @@ const Index = () => {
         <main className="flex-1 bg-muted/10">
           <TabsContent value="informacion" className="mt-0">
             <div className="bg-gradient-to-br from-sky-50 via-white to-sky-100">
-              <div className="container mx-auto flex flex-col gap-10 px-4 py-10">
-                <section className="rounded-3xl border border-sky-200/60 bg-white/90 p-6 shadow-xl backdrop-blur">
+              <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-3 py-10 sm:px-6 lg:px-10">
+                <section className="rounded-[32px] border border-sky-200/60 bg-white/90 p-4 shadow-xl backdrop-blur sm:p-6">
                   <Hero />
                 </section>
 
                 <section className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
-                  <div className="space-y-6 rounded-3xl border border-sky-200/70 bg-gradient-to-br from-white via-cyan-50/70 to-white p-6 shadow-xl backdrop-blur">
+                  <div className="rounded-[32px] border border-sky-200/70 bg-gradient-to-br from-white via-cyan-50/70 to-white p-4 shadow-xl backdrop-blur sm:p-6">
                     <AboutSection />
                   </div>
-                  <div className="rounded-3xl border border-sky-200/70 bg-gradient-to-br from-sky-900 to-blue-700 p-6 text-white shadow-xl">
+                  <div className="rounded-[32px] border border-sky-200/70 bg-gradient-to-br from-sky-900 to-blue-700 p-4 text-white shadow-xl sm:p-6">
                     <WhySection />
                   </div>
                 </section>
@@ -61,11 +61,11 @@ const Index = () => {
 
           <TabsContent value="clases" className="mt-0">
             <div className="bg-gradient-to-br from-white via-sky-50 to-sky-100">
-              <div className="container mx-auto flex flex-col gap-10 px-4 py-10">
-                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-xl">
+              <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-3 py-10 sm:px-6 lg:px-10">
+                <section className="rounded-[32px] border border-sky-200/70 bg-white p-4 shadow-xl sm:p-6">
                   <HowSection />
                 </section>
-                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-xl">
+                <section className="rounded-[32px] border border-sky-200/70 bg-white p-4 shadow-xl sm:p-6">
                   <CourseStatsTable />
                 </section>
               </div>
@@ -73,12 +73,12 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="progreso" className="mt-0">
-            <div className="bg-gradient-to-b from-white via-sky-50 to-sky-100">
-              <div className="container mx-auto flex flex-col gap-12 px-4 py-12">
-                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-lg">
+            <div className="bg-gradient-to-br from-white via-sky-50 to-sky-100">
+              <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-3 py-10 sm:px-6 lg:px-10">
+                <section className="rounded-[32px] border border-sky-200/70 bg-white p-4 shadow-xl sm:p-6">
                   <GlobalStats />
                 </section>
-                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-lg">
+                <section className="rounded-[32px] border border-sky-200/70 bg-white p-4 shadow-xl sm:p-6">
                   <HouseGrid />
                 </section>
               </div>
