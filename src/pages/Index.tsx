@@ -18,8 +18,8 @@ const Index = () => {
             <div className="flex items-center gap-3">
               <img
                 src={brandLockup}
-                alt="Water is Life y Craighouse School"
-                className="h-16 w-auto object-contain drop-shadow-lg"
+                alt="Water is Life and Craighouse School"
+                className="h-20 w-auto object-contain drop-shadow-2xl"
               />
               <div>
                 <p className="text-lg font-semibold text-foreground md:text-xl">Water is Life</p>
@@ -41,20 +41,31 @@ const Index = () => {
 
         <main className="flex-1 bg-muted/10">
           <TabsContent value="informacion" className="mt-0">
-            <div className="bg-gradient-to-b from-sky-50 via-white to-sky-100">
-              <div className="container mx-auto flex flex-col gap-16 px-4 py-12">
-                <Hero />
-                <AboutSection />
-                <WhySection />
+            <div className="bg-gradient-to-br from-sky-50 via-white to-sky-100">
+              <div className="container mx-auto flex flex-col gap-10 px-4 py-10">
+                <section className="rounded-3xl border border-sky-200/60 bg-white/90 p-6 shadow-xl backdrop-blur">
+                  <Hero />
+                </section>
+
+                <section className="grid gap-6 lg:grid-cols-[1.1fr,0.9fr]">
+                  <div className="space-y-6 rounded-3xl border border-sky-200/70 bg-gradient-to-br from-white via-cyan-50/70 to-white p-6 shadow-xl backdrop-blur">
+                    <AboutSection />
+                  </div>
+                  <div className="rounded-3xl border border-sky-200/70 bg-gradient-to-br from-sky-900 to-blue-700 p-6 text-white shadow-xl">
+                    <WhySection />
+                  </div>
+                </section>
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="clases" className="mt-0">
-            <div className="bg-gradient-to-b from-white via-sky-50 to-sky-100">
-              <div className="container mx-auto flex flex-col gap-12 px-4 py-12">
-                <HowSection />
-                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-lg">
+            <div className="bg-gradient-to-br from-white via-sky-50 to-sky-100">
+              <div className="container mx-auto flex flex-col gap-10 px-4 py-10">
+                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-xl">
+                  <HowSection />
+                </section>
+                <section className="rounded-3xl border border-sky-200/70 bg-white p-6 shadow-xl">
                   <CourseStatsTable />
                 </section>
               </div>
