@@ -1,5 +1,3 @@
-import { AlertCircle, TrendingUp, Heart } from "lucide-react";
-
 const WhySection = () => {
   return (
     <section id="why" className="py-20 bg-muted/30">
@@ -11,38 +9,6 @@ const WhySection = () => {
           <p className="text-xl text-muted-foreground leading-relaxed">
             It offers a real solution to an urgent need: access to safe drinking water. Across Chile, many communities still cannot obtain clean water for drinking or cooking.
           </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
-              <AlertCircle className="w-8 h-8 text-destructive" />
-            </div>
-            <div className="text-5xl font-bold mb-4 text-foreground">29%</div>
-            <p className="text-muted-foreground">
-              Only 29% of low-income households have safely managed water access
-            </p>
-          </div>
-
-          <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-6">
-              <Heart className="w-8 h-8 text-destructive" />
-            </div>
-            <div className="text-5xl font-bold mb-4 text-foreground">829K</div>
-            <p className="text-muted-foreground">
-              Annual deaths from diarrhea caused by contaminated water
-            </p>
-          </div>
-
-          <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-              <TrendingUp className="w-8 h-8 text-primary" />
-            </div>
-            <div className="text-5xl font-bold mb-4 text-foreground">1/4</div>
-            <p className="text-muted-foreground">
-              One in four primary schools lacks water service
-            </p>
-          </div>
         </div>
 
         <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 border border-primary/20">

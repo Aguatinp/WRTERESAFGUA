@@ -64,7 +64,7 @@ const AboutSection = () => {
                 />
               </div>
               <figcaption className="border-t border-primary/20 bg-primary/5 px-6 py-4 text-center text-sm font-medium text-primary">
-                Filtro oficial de la categoría Water is Life (referencia del pantallazo)
+                Official Water is Life ultra filter for the families we visit
               </figcaption>
             </figure>
             <div className="absolute -bottom-6 -right-6 h-48 w-48 -z-10 rounded-full bg-gradient-to-br from-accent to-secondary opacity-30 blur-3xl" />

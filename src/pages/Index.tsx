@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AlertTriangle, HeartPulse, School } from "lucide-react";
 import brandLockup from "@/assets/water-life-logo.png";
 import AboutSection from "@/components/AboutSection";
 import WhySection from "@/components/WhySection";
@@ -14,9 +15,9 @@ const impactStats = [
 ];
 
 const whyStats = [
-  { value: "29%", description: "Low-income households with safely managed water" },
-  { value: "829,000", description: "Annual deaths linked to unsafe water" },
-  { value: "1 in 4", description: "Primary schools without reliable water service" },
+  { value: "29%", description: "Low-income households with safely managed water", Icon: AlertTriangle },
+  { value: "829,000", description: "Annual deaths linked to unsafe water", Icon: HeartPulse },
+  { value: "1 in 4", description: "Primary schools without reliable water service", Icon: School },
 ];
 
 const InfoHero = () => (
@@ -66,10 +67,11 @@ const ImpactPanel = () => (
       schools that depend on hauling water.
     </p>
     <div className="mt-6 grid gap-4 sm:grid-cols-3">
-      {whyStats.map((stat) => (
-        <div key={stat.value} className="rounded-2xl bg-white/10 p-4 text-center">
-          <p className="text-3xl font-bold">{stat.value}</p>
-          <p className="mt-1 text-sm text-white/80">{stat.description}</p>
+      {whyStats.map(({ value, description, Icon }) => (
+        <div key={value} className="rounded-2xl bg-white/10 p-4 text-center">
+          <Icon className="mx-auto mb-3 h-8 w-8 text-white" />
+          <p className="text-3xl font-bold">{value}</p>
+          <p className="mt-1 text-sm text-white/80">{description}</p>
         </div>
       ))}
     </div>

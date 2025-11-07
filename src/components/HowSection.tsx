@@ -1,4 +1,5 @@
-import { GraduationCap, Users2, Gift } from "lucide-react";
+import { GraduationCap, Gift, Coins } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HowSection = () => {
   return (
@@ -18,37 +19,40 @@ const HowSection = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <GraduationCap className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-foreground">Elementary Students</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">Student Communities</h3>
             <p className="text-muted-foreground mb-4">
-              We invite elementary classes to donate one filter together.
+              Elementary, middle, and senior classes unite to fund one filter together and share updates with their paired family.
             </p>
             <div className="text-3xl font-bold text-primary mb-2">1 Filter</div>
-            <p className="text-sm text-muted-foreground">Per class</p>
+            <p className="text-sm text-muted-foreground">Per class · shared storytelling</p>
           </div>
 
           <div className="bg-card rounded-2xl p-8 shadow-lg border-2 border-secondary/20 hover:border-secondary/40 transition-all group">
             <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Users2 className="w-8 h-8 text-white" />
+              <Coins className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold mb-4 text-foreground">Middle & High School</h3>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">Filter Investment</h3>
             <p className="text-muted-foreground mb-4">
-              Older students raise funds as a class to sponsor a filter.
+              Every ultra filter, bucket, hose, and training session costs a single fixed amount for the entire family.
             </p>
-            <div className="text-3xl font-bold text-secondary mb-2">$50,000</div>
-            <p className="text-sm text-muted-foreground">Cost of one filter</p>
+            <div className="text-3xl font-bold text-secondary mb-2">$60,000 CLP</div>
+            <p className="text-sm text-muted-foreground">Complete kit price</p>
           </div>
 
-          <div className="bg-card rounded-2xl p-8 shadow-lg border-2 border-accent/20 hover:border-accent/40 transition-all group">
+          <Link
+            to="/donors"
+            className="bg-card rounded-2xl p-8 shadow-lg border-2 border-accent/20 hover:border-accent/40 transition-all group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
             <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Gift className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-2xl font-bold mb-4 text-foreground">Family Donation</h3>
             <p className="text-muted-foreground mb-4">
-              Families can donate and connect directly with the household that benefits.
+              Families can donate individually, connect directly with the household that benefits, and appear on our honorable mentions wall.
             </p>
             <div className="text-3xl font-bold text-accent mb-2">Special</div>
-            <p className="text-sm text-muted-foreground">Direct connection</p>
-          </div>
+            <p className="text-sm text-muted-foreground">Tap to view the Donor Wall</p>
+          </Link>
         </div>
 
         <div className="bg-gradient-to-r from-primary via-secondary to-accent rounded-2xl p-8 md:p-12 text-white">
