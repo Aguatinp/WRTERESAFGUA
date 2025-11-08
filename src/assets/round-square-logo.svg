@@ -1,0 +1,24 @@
+<svg width="225" height="225" viewBox="0 0 225 225" xmlns="http://www.w3.org/2000/svg">
+  <rect width="225" height="225" rx="12" fill="#d80f3f"/>
+  <circle cx="112.5" cy="112.5" r="92" fill="#ffffff"/>
+  <text
+    x="112.5"
+    y="102"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="28"
+    font-weight="600"
+    fill="#d80f3f"
+    text-anchor="middle"
+    letter-spacing="4"
+  >ROUND</text>
+  <text
+    x="112.5"
+    y="140"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="28"
+    font-weight="600"
+    fill="#d80f3f"
+    text-anchor="middle"
+    letter-spacing="4"
+  >SQUARE</text>
+</svg>
