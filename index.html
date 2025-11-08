@@ -21,16 +21,6 @@
       This application requires JavaScript. Start the dev server with
       <code>npm run dev</code> and open the URL shown in the console.
     </noscript>
-    <script>
-      (function () {
-        const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
-        const alreadyInDocs = location.pathname.includes("/docs/");
-        if (!isLocal && !alreadyInDocs) {
-          const target = new URL('./docs/', location.href);
-          location.replace(target.href);
-        }
-      })();
-    </script>
     <div id="root"></div>
     <script>
       if (location.protocol === 'file:') {
